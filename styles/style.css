@@ -6,14 +6,13 @@ body {
 
 #grid {
     margin-top: 1vw;
-    background-color: white;
     display: grid;
     justify-content: center;
 }
 
 .grid-square {
     border: solid;
-    border-width: thin;
+    border-width: 1px;
 }
 
 .grid-drawn {
