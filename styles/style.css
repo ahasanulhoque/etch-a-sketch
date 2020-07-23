@@ -6,15 +6,16 @@ body {
 
 #grid {
     margin-top: 1vw;
+    background-color: white;
     display: grid;
-    width: 40vw;
-    height: 40vw;
     justify-content: center;
 }
 
 .grid-square {
     border: solid;
     border-width: thin;
-    width: 2.5vw;
-    height: 2.5vw;
+}
+
+.grid-drawn {
+    background-color: blue;
 }
