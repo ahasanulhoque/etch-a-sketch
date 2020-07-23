@@ -1,20 +1,20 @@
 body {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
 
 #grid {
+    margin-top: 1vw;
     display: grid;
-    width: 1000px;
-    border: solid;
+    width: 40vw;
+    height: 40vw;
     justify-content: center;
-    /*grid-template-columns: auto auto auto auto;*/
 }
 
 .grid-square {
     border: solid;
     border-width: thin;
-    width: 30px;
-    height: 30px;
+    width: 2.5vw;
+    height: 2.5vw;
 }
