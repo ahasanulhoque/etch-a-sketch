@@ -44,7 +44,7 @@ squares.forEach((square) => {
     
     square.addEventListener('mouseover', () => {
         //Default color:
-        if(colorValue == 0) square.classList.add('grid-drawn');
+        if(colorValue == 0) square.style.backgroundColor = 'black';
 
         //Random color:
         if(colorValue == 1){
@@ -86,7 +86,7 @@ function drawAgain() {
         let lightness = 90;
         square.addEventListener('mouseover', () => {
             //Default color:
-            if(colorValue == 0) square.classList.add('grid-drawn');
+            if(colorValue == 0) square.style.backgroundColor = 'black';
 
             //Random color:
             if(colorValue == 1){
