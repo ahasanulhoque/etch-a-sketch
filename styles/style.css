@@ -8,6 +8,20 @@ button {
     width: 120px;
 }
 
+#pad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #990000;
+    padding: 50px;
+    border-radius: 10%;
+}
+
+h1 {
+    color: white;
+    margin-top: -30px;
+}
+
 #reset {
     margin-top: -15px
 }
@@ -19,6 +33,7 @@ button {
 #grid {
     display: grid;
     justify-content: center;
+    background-color: white;
 }
 
 .grid-square {
