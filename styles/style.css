@@ -8,6 +8,10 @@ button {
     width: 120px;
 }
 
+#reset {
+    margin-top: -15px
+}
+
 #color-buttons {
     margin: 10px;
 }
