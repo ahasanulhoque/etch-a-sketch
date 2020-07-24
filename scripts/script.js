@@ -1,8 +1,25 @@
 const grid = document.querySelector('#grid');
-const button = document.querySelector('button');
+const reset = document.querySelector('#reset');
+const defaultColor = document.querySelector('#default');
+const randomColor = document.querySelector('#random');
+const grayscale = document.querySelector('#grayscale');
+
+let colorValue = 0; //Color value used to allow user to select mode
 
 makeGrid();
 let squares = document.querySelectorAll('.grid-square');
+
+defaultColor.addEventListener('click', () => {
+    colorValue = 0;
+});
+
+randomColor.addEventListener('click', () => {
+    colorValue = 1;
+});
+
+grayscale.addEventListener('click', () => {
+    colorValue = 2;
+})
 
 //Below function creates the grid and has a default parameter of 16 to
 //create the initial grid upon page load
@@ -23,12 +40,31 @@ function makeGrid (gridSize=16) {
 
 
 squares.forEach((square) => {
+    let lightness = 90;
+    
     square.addEventListener('mouseover', () => {
-        square.classList.add('grid-drawn');
+        //Default color:
+        if(colorValue == 0) square.classList.add('grid-drawn');
+
+        //Random color:
+        if(colorValue == 1){
+            let r = Math.floor((Math.random() * 255) + 1);
+            let g = Math.floor((Math.random() * 255) + 1);
+            let b = Math.floor((Math.random() * 255) + 1);
+            square.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+        }
+        
+        //Degrees of black
+        if(colorValue == 2){
+            if(lightness>=0){
+                square.style.backgroundColor = `hsl(0, 0%, ${lightness}%)`;
+                lightness -= 10;
+            }
+        }
     });
 });
 
-button.addEventListener('click', () => {
+reset.addEventListener('click', () => {
     resetGrid();
 });
 
@@ -47,8 +83,26 @@ function resetGrid() {
 //This function listens for events on the redrawn grid
 function drawAgain() {
     squares.forEach((square) => {
+        let lightness = 90;
         square.addEventListener('mouseover', () => {
-            square.classList.add('grid-drawn');
+            //Default color:
+            if(colorValue == 0) square.classList.add('grid-drawn');
+
+            //Random color:
+            if(colorValue == 1){
+                let r = Math.floor((Math.random() * 255) + 1);
+                let g = Math.floor((Math.random() * 255) + 1);
+                let b = Math.floor((Math.random() * 255) + 1);
+                square.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+            }
+            
+            //Degrees of black
+            if(colorValue == 2){
+                if(lightness>=0){
+                    square.style.backgroundColor = `hsl(0, 0%, ${lightness}%)`;
+                    lightness -= 10;
+                }
+            }
         });
     });
 }

@@ -4,8 +4,15 @@ body {
     align-items: center;
 }
 
+button {
+    width: 120px;
+}
+
+#color-buttons {
+    margin: 10px;
+}
+
 #grid {
-    margin-top: 1vw;
     display: grid;
     justify-content: center;
 }
@@ -16,5 +23,5 @@ body {
 }
 
 .grid-drawn {
-    background-color: blue;
+    background-color: black;
 }
