@@ -4,21 +4,21 @@ const defaultColor = document.querySelector('#default');
 const randomColor = document.querySelector('#random');
 const grayscale = document.querySelector('#grayscale');
 
-let colorValue = 0; //Color value used to allow user to select mode
+let colorValue = 'default'; //Color value used to allow user to select mode
 
 makeGrid();
 let squares = document.querySelectorAll('.grid-square');
 
 defaultColor.addEventListener('click', () => {
-    colorValue = 0;
+    colorValue = 'default';
 });
 
 randomColor.addEventListener('click', () => {
-    colorValue = 1;
+    colorValue = 'random';
 });
 
 grayscale.addEventListener('click', () => {
-    colorValue = 2;
+    colorValue = 'grayscale';
 })
 
 //Below function creates the grid and has a default parameter of 16 to
@@ -44,18 +44,22 @@ squares.forEach((square) => {
     
     square.addEventListener('mouseover', () => {
         //Default color:
-        if(colorValue == 0) square.style.backgroundColor = 'black';
+        if(colorValue == 'default') {
+            square.style.backgroundColor = 'black';
+            lightness = 90;
+        }
 
         //Random color:
-        if(colorValue == 1){
+        if(colorValue == 'random'){
             let r = Math.floor((Math.random() * 255) + 1);
             let g = Math.floor((Math.random() * 255) + 1);
             let b = Math.floor((Math.random() * 255) + 1);
             square.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+            lightness = 90;
         }
         
         //Degrees of black
-        if(colorValue == 2){
+        if(colorValue == 'grayscale'){
             if(lightness>=0){
                 square.style.backgroundColor = `hsl(0, 0%, ${lightness}%)`;
                 lightness -= 10;
@@ -86,18 +90,22 @@ function drawAgain() {
         let lightness = 90;
         square.addEventListener('mouseover', () => {
             //Default color:
-            if(colorValue == 0) square.style.backgroundColor = 'black';
+            if(colorValue == 'default') {
+                square.style.backgroundColor = 'black';
+                lightness = 90;
+            }
 
             //Random color:
-            if(colorValue == 1){
+            if(colorValue == 'random'){
                 let r = Math.floor((Math.random() * 255) + 1);
                 let g = Math.floor((Math.random() * 255) + 1);
                 let b = Math.floor((Math.random() * 255) + 1);
                 square.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+                lightness = 90;
             }
             
             //Degrees of black
-            if(colorValue == 2){
+            if(colorValue == 'grayscale'){
                 if(lightness>=0){
                     square.style.backgroundColor = `hsl(0, 0%, ${lightness}%)`;
                     lightness -= 10;
