@@ -1,3 +1,5 @@
+[Live demo here](https://ahasanulhoque.github.io/etch-a-sketch/)
+
 This was completed for The Odin Project's Etch-a-Sketch project, found here https://www.theodinproject.com/courses/web-development-101/lessons/etch-a-sketch-project
 
 This project uses HTML, CSS, and Javascript, and was used as practice with DOM manipulation.
